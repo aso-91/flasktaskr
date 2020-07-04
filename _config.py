@@ -4,7 +4,7 @@ import os
 
 # grab the folder where this script lives
 basedir = PurePath(__file__).parent
-# osdir = os.path.abspath(os.path.dirname(__file__))
+# basedir = os.path.abspath(os.path.dirname(__file__))
 
 
 DATABASE = 'flasktaskr.db'
@@ -15,5 +15,5 @@ SECRET_KEY = 'myprecious'
 
 
 # define the full path for the database
-# ---> DBzz = os.path.join(osdir, DATABASE)
+# DATABASE_PATH = os.path.join(basedir, DATABASE)
 DATABASE_PATH = basedir.joinpath(DATABASE)
