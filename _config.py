@@ -10,10 +10,17 @@ basedir = PurePath(__file__).parent
 DATABASE = 'flasktaskr.db'
 USERNAME = 'admin'
 PASSWORD = 'admin'
-WTF_CSRF_ENABLED = True
+CSRF_ENABLED = True
+# usin Sqlite3
+# WTF_CSRF_ENABLED = True
 SECRET_KEY = 'myprecious'
 
 
 # define the full path for the database
 # DATABASE_PATH = os.path.join(basedir, DATABASE)
 DATABASE_PATH = basedir.joinpath(DATABASE)
+
+# the database uri      ( new line addition )
+SQLALCHEMY_DATABASE_URI = 'sqlite:///' + str(DATABASE_PATH)
+
+print(SQLALCHEMY_DATABASE_URI)
